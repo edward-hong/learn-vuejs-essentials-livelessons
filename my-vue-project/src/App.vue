@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>My Vue App</h1>
     <!-- <FlashingMessage message="Hello Friends!" :delay="500" /> -->
     <!-- <LifecycleTest
       v-if="numberOfClicks < 10"
@@ -49,7 +50,7 @@
 </script>
 
 <style>
-  #app {
+  h1 {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
