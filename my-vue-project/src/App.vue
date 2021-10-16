@@ -1,14 +1,19 @@
 <template>
-  <PeopleList />
+  <div>
+    <CounterButton />
+    <PeopleList />
+  </div>
 </template>
 
 <script>
   import PeopleList from './components/PeopleList'
+  import CounterButton from './components/CounterButton'
 
   export default {
     name: 'App',
     components: {
       PeopleList,
+      CounterButton,
     },
   }
 </script>
