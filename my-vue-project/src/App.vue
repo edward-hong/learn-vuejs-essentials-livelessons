@@ -1,6 +1,7 @@
 <template>
   <div>
-    <CounterButton />
+    <Congratulations :numberOfClicks="numberOfClicks" />
+    <CounterButton @increment="increment" :numberOfClicks="numberOfClicks" />
     <PeopleList />
   </div>
 </template>
@@ -8,12 +9,24 @@
 <script>
   import PeopleList from './components/PeopleList'
   import CounterButton from './components/CounterButton'
+  import Congratulations from './components/Congratulations'
 
   export default {
     name: 'App',
     components: {
       PeopleList,
       CounterButton,
+      Congratulations,
+    },
+    data() {
+      return {
+        numberOfClicks: 0,
+      }
+    },
+    methods: {
+      increment() {
+        this.numberOfClicks += 1
+      },
     },
   }
 </script>
