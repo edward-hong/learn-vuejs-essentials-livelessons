@@ -1,5 +1,9 @@
 <template>
   <div>
+    <LifecycleTest
+      v-if="numberOfClicks < 10"
+      :numberOfClicks="numberOfClicks"
+    />
     <Congratulations :numberOfClicks="numberOfClicks" />
     <CounterButton @increment="increment" :numberOfClicks="numberOfClicks" />
     <PeopleList />
@@ -10,6 +14,7 @@
   import PeopleList from './components/PeopleList'
   import CounterButton from './components/CounterButton'
   import Congratulations from './components/Congratulations'
+  import LifecycleTest from './components/LifecycleTest'
 
   export default {
     name: 'App',
@@ -17,6 +22,7 @@
       PeopleList,
       CounterButton,
       Congratulations,
+      LifecycleTest,
     },
     data() {
       return {
