@@ -1,20 +1,14 @@
 <template>
   <div>
-    <h3>{{ name }}</h3>
-    <p>Age: {{ age }} years</p>
-    <p>Hair Color: {{ hairColor }}</p>
+    <h3>{{ person.name }}</h3>
+    <p>Age: {{ person.age }} years</p>
+    <p>Hair Color: {{ person.hairColor }}</p>
   </div>
 </template>
 
 <script>
   export default {
     name: 'PeopleListItem',
-    data() {
-      return {
-        name: 'Edward Hong',
-        age: 100,
-        hairColor: 'black',
-      }
-    },
+    props: ['person'],
   }
 </script>
