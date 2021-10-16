@@ -6,6 +6,9 @@
     />
     <Congratulations :numberOfClicks="numberOfClicks" />
     <CounterButton @increment="increment" :numberOfClicks="numberOfClicks" />
+    <Timer @tick="onTick" name="Timer 1" :delay="2000" />
+    <Timer @tick="onTick" name="Timer 2" :delay="5000" />
+
     <PeopleList />
   </div>
 </template>
@@ -15,6 +18,7 @@
   import CounterButton from './components/CounterButton'
   import Congratulations from './components/Congratulations'
   import LifecycleTest from './components/LifecycleTest'
+  import Timer from './components/Timer'
 
   export default {
     name: 'App',
@@ -23,6 +27,7 @@
       CounterButton,
       Congratulations,
       LifecycleTest,
+      Timer,
     },
     data() {
       return {
@@ -32,6 +37,9 @@
     methods: {
       increment() {
         this.numberOfClicks += 1
+      },
+      onTick(name) {
+        console.log(name + ' Tick!')
       },
     },
   }
