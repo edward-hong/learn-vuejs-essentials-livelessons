@@ -1,23 +1,30 @@
 <template>
   <div>
-    <router-link to="/cart">Shopping Cart</router-link>
+    <NavBar :numberOfItems="numberOfItems" />
     <router-view
       :shoppingCart="shoppingCart"
       :products="products"
+      :userInfo="userInfo"
       @addToCart="addToCart"
+      @userInfoSaved="updateUserInfo"
     ></router-view>
   </div>
 </template>
 
 <script>
+  import NavBar from './components/NavBar'
   import products from './pages/products'
 
   export default {
     name: 'App',
+    components: {
+      NavBar,
+    },
     data() {
       return {
         shoppingCartIds: [],
         products,
+        userInfo: { name: '', age: 0, address: '' },
       }
     },
     computed: {
@@ -26,10 +33,16 @@
           this.products.find(p => p.id === id)
         )
       },
+      numberOfItems() {
+        return this.shoppingCartIds.length
+      },
     },
     methods: {
       addToCart(id) {
         this.shoppingCartIds.push(id)
+      },
+      updateUserInfo(name, age, address) {
+        this.userInfo = { name, age, address }
       },
     },
   }
