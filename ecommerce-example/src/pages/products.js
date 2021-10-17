@@ -15,6 +15,6 @@ export default [
     id: '345',
     name: 'Hamburgers',
     price: '$5.99',
-    description: 'Made from 100% Angus beef',
+    description: 'Made from 100% Angus beef, perfect for cookouts',
   },
 ]
